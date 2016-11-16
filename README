@@ -1,0 +1,18 @@
+# build your own linux rootfs base on ubuntu----
+
+# build qemu environment on your work-pc first----
+# just do like the web page below------
+http://blog.chinaunix.net/uid-9688646-id-3938235.html
+
+# now you can run the build-fs-bash.sh----
+$: ./build-fs-base.sh
+
+# the script can't set passwd
+# please chroot and change passwd by yourself
+$: sudo chroot ubuntu/
+$: passwd type_your_username
+$: passwd root
+$: exit
+
+# now you hava a complete rootfs
+# enjoy!!!
