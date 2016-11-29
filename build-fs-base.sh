@@ -42,11 +42,12 @@ cat << EOF | sudo chroot $TARGET_ROOTFS_DIR
 apt update && apt upgrade -y
 
 #........timezone locale and keyboard..........
-cp -a /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-echo en_US.UTF-8 UTF-8 > /etc/locale.gen && locale-gen
+echo "UTC=yes" >> /etc/default/rcS
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && locale-gen
 echo "LANG="en_US.UTF-8"" > /etc/default/locale
-echo "LANGUAGE="en_US:en"" > /etc/default/locale
-echo "XKBLAYOUT="us"" > /etc/default/keyboard
+echo "LANGUAGE="en_US:en"" >> /etc/default/locale
+echo "XKBLAYOUT="us"" >> /etc/default/keyboard
 
 #........install some base tools..........
 apt install -y xfce4 net-tools iputils-ping vim
@@ -63,14 +64,13 @@ echo "KERNEL=="mali0", MODE="0666", GROUP="video"" > /etc/udev/rules.d/50-mali.r
 
 #........enable dhcp network.............
 echo auto eth0 > /etc/network/interfaces.d/eth0
-echo iface eth0 inet dhcp > /etc/network/interfaces.d/eth0
+echo iface eth0 inet dhcp >> /etc/network/interfaces.d/eth0
 
 #.......enable autologin from tty1.........
 cp -av ./preset/getty/getty@tty1.service \
 /etc/systemd/system/getty.target.wants/getty@tty1.service
 
 # rename hostname
-rm -vf /etc/hostname
 echo rk3288 > /etc/hostname 
 
 # add user named cqutprint
