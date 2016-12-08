@@ -51,7 +51,7 @@ echo "LANGUAGE="zh_CN:en_GB:en"" >> /etc/default/locale
 echo "XKBLAYOUT="us"" >> /etc/default/keyboard
 
 #........install some base tools..........
-apt install -y xfce4 net-tools iputils-ping vim
+apt install -y xfce4 net-tools iputils-ping wicd vim
 
 #.........transitional chinese support....
 apt install -y fonts-wqy-microhei
