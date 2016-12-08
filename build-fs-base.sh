@@ -44,13 +44,17 @@ apt update && apt upgrade -y
 #........timezone locale and keyboard..........
 echo "UTC=yes" >> /etc/default/rcS
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && locale-gen
-echo "LANG="en_US.UTF-8"" > /etc/default/locale
-echo "LANGUAGE="en_US:en"" >> /etc/default/locale
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+echo "zh_CN.UTF-8 UTF-8" >> /etc/locale.gen && locale-gen
+echo "LANG="zh_CN.UTF-8"" > /etc/default/locale
+echo "LANGUAGE="zh_CN:en_GB:en"" >> /etc/default/locale
 echo "XKBLAYOUT="us"" >> /etc/default/keyboard
 
 #........install some base tools..........
 apt install -y xfce4 net-tools iputils-ping vim
+
+#.........transitional chinese support....
+apt install -y fonts-wqy-microhei
 
 #................xserver...................
 dpkg -X ./prebuild/xserver/xserver-common_*_all.deb /
