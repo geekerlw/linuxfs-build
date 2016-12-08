@@ -72,6 +72,12 @@ dpkg -X ./prebuild/libmali/libmali-rk-dev_*_armhf.deb /
 rm -rvf /usr/lib/arm-linux-gnueabihf/mesa-egl/*
 echo "KERNEL=="mali0", MODE="0666", GROUP="video"" > /etc/udev/rules.d/50-mali.rules
 
+#..........gstreamer and vaapi............
+apt install -y gstreamer1.0-alsa gstreamer1.0-nice gstreamer1.0-plugins-bad \
+gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-tools \
+gstreamer1.0-x gstreamer1.0-plugins-bad-faad gstreamer1.0-vaapi
+dpkg -X ./prebuild/vaapi/libva-rockchip*_armhf.deb / 
+
 #........enable dhcp network.............
 echo auto eth0 > /etc/network/interfaces.d/eth0
 echo iface eth0 inet dhcp >> /etc/network/interfaces.d/eth0
