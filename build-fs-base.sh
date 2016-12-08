@@ -56,6 +56,9 @@ apt install -y xfce4 net-tools iputils-ping vim
 #.........transitional chinese support....
 apt install -y fonts-wqy-microhei
 
+#........cups and hp printer driver.......
+apt install -y cups hplip
+
 #................xserver...................
 dpkg -X ./prebuild/xserver/xserver-common_*_all.deb /
 dpkg -X ./prebuild/xserver/xserver-xorg-core_*_armhf.deb /
