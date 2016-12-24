@@ -1,13 +1,17 @@
-# build your own linux rootfs base on ubuntu----
+# build your own linux rootfs base on ubuntu
 
-# build qemu environment on your work-pc first----
-# just do like the web page below------
-http://blog.chinaunix.net/uid-9688646-id-3938235.html
+# build qemu environment on your work-pc first
+$ sudo apt install qemu-user-static binfmt-support
+
+# the build-fs-base.sh support to change the username
+# and hostname yourself
+# the build env is named USERNAME and BOARDNAME
+# the default is cqutprint and rk3288
 
 # now you can run the build-fs-bash.sh----
-$: ./build-fs-base.sh
+$: ./build-fs-base.sh USERNAME=cqutprint BOARDNAME=rk3288
 
-# the script can't set passwd
+# the script set passwd the same as username
 # please chroot and change passwd by yourself
 $: sudo chroot ubuntu/
 $: passwd type_your_username
