@@ -1,0 +1,4 @@
+ubuntu
+*.tar.gz
+*.o
+*.sep
