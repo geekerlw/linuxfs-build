@@ -7,12 +7,12 @@ ARCH="armhf"
 
 if [ ! $BOARDNAME ]; then
 	BOARDNAME="rk3288"
-	echo -e "\033[1m\033[34m -------- Boardname is: $BOARDNAME -------- \033[0m"
 fi
+	echo -e "\033[1m\033[34m -------- Boardname is: $BOARDNAME -------- \033[0m"
 if [ ! $USERNAME ]; then
 	USERNAME="cqutprint"
-	echo -e "\033[1m\033[34m -------- USERNAME is: $USERNAME -------- \033[0m"
 fi
+	echo -e "\033[1m\033[34m -------- USERNAME is: $USERNAME -------- \033[0m"
 
 # set ubuntu version
 if [ ! $ROOTFS_VERSION ]; then
