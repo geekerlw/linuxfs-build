@@ -98,6 +98,7 @@ rm -rvf /usr/lib/arm-linux-gnueabihf/mesa-egl/*
 
 # libdrm
 echo -e "\033[5m\033[34m -------- Install libdrm-rockchip -------- \033[0m"
+dpkg -i ./prebuild/libdrm/libdrm2*_armhf.deb
 dpkg -i ./prebuild/libdrm/libdrm-rockchip*_armhf.deb
 
 # mpp
