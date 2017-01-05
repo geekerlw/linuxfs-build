@@ -80,10 +80,6 @@ apt install -y parole
 echo -e "\033[5m\033[34m -------- Add chinese support -------- \033[0m"
 apt install -y fonts-wqy-microhei
 
-# cups and hp printer driver
-echo -e "\033[5m\033[34m -------- Add printer driver support -------- \033[0m"
-apt install -y cups hplip
-
 # Split screen tool
 echo -e "\033[5m\033[34m -------- Add a split screen tool -------- \033[0m"
 apt install -y devilspie
