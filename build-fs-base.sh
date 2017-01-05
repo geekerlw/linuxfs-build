@@ -65,7 +65,7 @@ echo "XKBLAYOUT="us"" >> /etc/default/keyboard
 
 # install some base tools
 echo -e "\033[5m\033[34m -------- Install some base tools -------- \033[0m"
-apt install -y xfce4 net-tools iputils-ping wicd vim xdg-utils usb-modeswitch
+apt install -y xfce4 net-tools iputils-ping wicd vim xdg-utils
 
 # gstreamer base tools
 echo -e "\033[5m\033[34m -------- Install gstreamer base environment -------- \033[0m"
