@@ -80,10 +80,6 @@ apt install -y parole
 echo -e "\033[5m\033[34m -------- Add chinese support -------- \033[0m"
 apt install -y fonts-wqy-microhei
 
-# Split screen tool
-echo -e "\033[5m\033[34m -------- Add a split screen tool -------- \033[0m"
-apt install -y devilspie
-
 # xserver
 echo -e "\033[5m\033[34m -------- Extract xserver to support 2D Accelerate -------- \033[0m"
 dpkg -x ./prebuild/xserver/xserver-common*_all.deb /
