@@ -4,8 +4,8 @@
 The script can support you a base ubuntu rootfs, provide the following functions：  
 1. username and boardname commission  
 2. tiny xfce4 desktop environment  
-3. use the tuna mirror sources.list
-4. chinese display and fonts support  
+3. use the tuna mirror sources.list  
+4. chinese display and fonts support    
 5. basic net tools  
 6. a simple media player based on gstreamer framework  
 7. xserver with 2d acceleration  
