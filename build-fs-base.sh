@@ -70,7 +70,7 @@ apt install -y xfce4 net-tools iputils-ping vim xdg-utils
 # gstreamer base tools
 echo -e "\033[5m\033[34m -------- Install gstreamer base environment -------- \033[0m"
 apt install -y gstreamer1.0-alsa gstreamer1.0-libav gstreamer1.0-plugins-base \
-gstreamer1.0-plugins-good gstreamer1.0-plugins-bad-faad gstreamer1.0-x gstreamer1.0-tools\
+gstreamer1.0-plugins-good gstreamer1.0-plugins-bad-faad gstreamer1.0-x gstreamer1.0-tools
 
 # install a media player based on gstreamer framework
 echo -e "\033[5m\033[34m -------- Install a gstreamer media player -------- \033[0m"
