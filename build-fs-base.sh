@@ -73,10 +73,6 @@ apt install -y gstreamer1.0-alsa gstreamer1.0-libav gstreamer1.0-plugins-base \
 gstreamer1.0-plugins-good gstreamer1.0-plugins-bad-faad gstreamer1.0-plugins-bad-videoparsers \
 gstreamer1.0-x gstreamer1.0-tools
 
-# install a media player based on gstreamer framework
-echo -e "\033[5m\033[34m -------- Install a gstreamer media player -------- \033[0m"
-apt install -y parole
-
 # transitional chinese support
 echo -e "\033[5m\033[34m -------- Add chinese support -------- \033[0m"
 apt install -y fonts-wqy-microhei
