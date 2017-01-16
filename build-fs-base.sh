@@ -89,7 +89,6 @@ dpkg -x ./prebuild/xserver/xserver-xorg-core*_armhf.deb /
 echo -e "\033[5m\033[34m -------- Install libmali to support 3D Accelerate -------- \033[0m"
 dpkg -i ./prebuild/libmali/libmali-rk-midgard*_armhf.deb 
 dpkg -i ./prebuild/libmali/libmali-rk-dev*_armhf.deb 
-rm -rvf /usr/lib/arm-linux-gnueabihf/mesa-egl/*
 
 # libdrm
 echo -e "\033[5m\033[34m -------- Install libdrm-rockchip -------- \033[0m"
@@ -105,6 +104,10 @@ dpkg -i ./prebuild/mpp/librockchip-vpu*_armhf.deb
 # gstreamer-rockchip
 echo -e "\033[5m\033[34m -------- Install gstreamer-rockchip to support hw decode -------- \033[0m"
 dpkg -i ./prebuild/gstreamer-rockchip/gstreamer1.0-rockchip*_armhf.deb
+
+# solve depends problems
+apt install -f -y
+rm -rvf /usr/lib/arm-linux-gnueabihf/mesa-egl/*
 
 # enable dhcp network
 echo -e "\033[5m\033[34m -------- Enable ethernet autostart -------- \033[0m"
