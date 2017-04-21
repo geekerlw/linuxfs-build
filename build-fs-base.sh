@@ -82,6 +82,10 @@ echo -e "\033[5m\033[34m -------- Extract xserver to support 2D Accelerate -----
 dpkg -x ./prebuild/xserver/xserver-common*_all.deb /
 dpkg -x ./prebuild/xserver/xserver-xorg-core*_armhf.deb /
 
+# use libinput instead of evdev
+apt autoremove -y xserver-xorg-input-all xserver-xorg-input-evdev
+apt install -y xserver-xorg-input-libinput
+
 # maligpu
 echo -e "\033[5m\033[34m -------- Install libmali to support 3D Accelerate -------- \033[0m"
 dpkg -i ./prebuild/libmali/libmali-rk-midgard*_armhf.deb 
