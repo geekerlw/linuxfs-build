@@ -16,7 +16,7 @@ fi
 
 # set ubuntu version
 if [ ! $ROOTFS_VERSION ]; then
-	ROOTFS_VERSION="16.04.1"
+	ROOTFS_VERSION="16.04.2"
 	echo -e "\033[1m\033[34m -------- Start build ubuntu $ROOTFS_VERSION -------- \033[0m"
 fi
 
