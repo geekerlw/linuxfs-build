@@ -8,3 +8,7 @@ deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ xenial-backports main 
 deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ xenial-proposed main multiverse restricted universe
 deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ xenial-security main multiverse restricted universe
 deb-src http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ xenial-updates main multiverse restricted universe
+
+# add persional package archive
+deb http://ppa.launchpad.net/geekerlw/rockchip/ubuntu xenial main 
+deb-src http://ppa.launchpad.net/geekerlw/rockchip/ubuntu xenial main 

@@ -51,6 +51,7 @@ sudo cp -av /usr/bin/qemu-arm-static $TARGET_ROOTFS_DIR/usr/bin/
 # chroot to install some packages
 echo -e "\033[5m\033[34m --------------------Change root----------------------- \033[0m"
 cat << EOF | sudo chroot $TARGET_ROOTFS_DIR
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 2EF5FF09
 apt update && apt upgrade -y
 
 # timezone locale and keyboard
@@ -88,8 +89,8 @@ apt install -y xserver-xorg-input-libinput
 
 # maligpu
 echo -e "\033[5m\033[34m -------- Install libmali to support 3D Accelerate -------- \033[0m"
-dpkg -i ./prebuild/libmali/libmali-rk-midgard*_armhf.deb 
-dpkg -i ./prebuild/libmali/libmali-rk-dev*_armhf.deb 
+apt install libmali-rk-midgard-r13p0-r0p0
+apt install libmali-rk-dev
 
 # libdrm
 echo -e "\033[5m\033[34m -------- Install libdrm-rockchip -------- \033[0m"
@@ -98,13 +99,12 @@ dpkg -i ./prebuild/libdrm/libdrm-rockchip*_armhf.deb
 
 # mpp
 echo -e "\033[5m\033[34m -------- Install Media Process Platform (MPP) module -------- \033[0m"
-dpkg -i ./prebuild/mpp/librockchip-mpp*_armhf.deb
-dpkg -i ./prebuild/mpp/librockchip-vpu*_armhf.deb
-
+apt install librockchip-mpp1
+apt install librockchip-vpu0
 
 # gstreamer-rockchip
 echo -e "\033[5m\033[34m -------- Install gstreamer-rockchip to support hw decode -------- \033[0m"
-dpkg -i ./prebuild/gstreamer-rockchip/gstreamer1.0-rockchip*_armhf.deb
+apt install gstreamer1.0-rockchip1
 
 # solve depends problems
 apt install -f -y
