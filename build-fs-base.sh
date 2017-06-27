@@ -89,22 +89,22 @@ apt install -y xserver-xorg-input-libinput
 
 # maligpu
 echo -e "\033[5m\033[34m -------- Install libmali to support 3D Accelerate -------- \033[0m"
-apt install libmali-rk-midgard-r13p0-r0p0
-apt install libmali-rk-dev
+apt install -y libmali-rk-midgard-r13p0-r0p0
+apt install -y libmali-rk-dev
 
 # libdrm
 echo -e "\033[5m\033[34m -------- Install libdrm-rockchip -------- \033[0m"
-dpkg -i ./prebuild/libdrm/libdrm2*_armhf.deb
-dpkg -i ./prebuild/libdrm/libdrm-rockchip*_armhf.deb
+apt install -y libdrm2
+apt install -y libdrm-rockchip1
 
 # mpp
 echo -e "\033[5m\033[34m -------- Install Media Process Platform (MPP) module -------- \033[0m"
-apt install librockchip-mpp1
-apt install librockchip-vpu0
+apt install -y librockchip-mpp1
+apt install -y librockchip-vpu0
 
 # gstreamer-rockchip
 echo -e "\033[5m\033[34m -------- Install gstreamer-rockchip to support hw decode -------- \033[0m"
-apt install gstreamer1.0-rockchip1
+apt install -y gstreamer1.0-rockchip1
 
 # solve depends problems
 apt install -f -y
