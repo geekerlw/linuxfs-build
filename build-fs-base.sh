@@ -51,6 +51,16 @@ sudo cp -av /usr/bin/qemu-arm-static $TARGET_ROOTFS_DIR/usr/bin/
 # chroot to install some packages
 echo -e "\033[5m\033[34m --------------------Change root----------------------- \033[0m"
 cat << EOF | sudo chroot $TARGET_ROOTFS_DIR
+
+# modify permission for overlays
+echo -e "\033[5m\033[34m -------- Modify permission for overlays -------- \033[0m"
+chown -Rv root:root \
+/etc/apt/sources.list \
+/etc/resolv.conf \
+/prebuild \
+/preset/overlay
+
+# add persional packages archive
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 2EF5FF09
 apt update && apt upgrade -y
 
@@ -129,6 +139,10 @@ echo "root:root" | chpasswd
 echo -e "\033[5m\033[34m -------- Extract presets -------- \033[0m"
 cp -av ./preset/overlay/* /
 cp -av ./preset/user/. /home/$USERNAME/
+
+# modify permission for users
+echo -e "\033[5m\033[34m -------- Modify permission for users -------- \033[0m"
+chown -Rv 1000:1000 /home/$USERNAME
 
 # remove package cache
 echo -e "\033[5m\033[34m -------- Remove none needed packages -------- \033[0m"
