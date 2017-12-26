@@ -68,6 +68,7 @@ apt update && apt upgrade -y
 echo -e "\033[5m\033[34m -------- Set timezone keyboard and default language --------- \033[0m"
 echo "UTC=yes" >> /etc/default/rcS
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+apt install -y locales
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
 echo "zh_CN.UTF-8 UTF-8" >> /etc/locale.gen && locale-gen
 echo "LANG="zh_CN.UTF-8"" > /etc/default/locale
